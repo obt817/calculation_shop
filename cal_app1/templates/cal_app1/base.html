@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{% static 'cal_app1/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'cal_app1/css/main2.css' %}">
+  </head>
+  <body>
+<div class="navbar">
+  <a href="/">TOP</a>
+  <a href="salary_top/">給料管理</a>
+  <a href="#">シフト管理</a>
+  <a href="#">仕入管理</a>
+  <a href="#">廃棄管理</a>
+</div>
+<h1>店名</h1>
+    {% block main %}
+    コンテンツがありません
+    {% endblock %}
+  </body>
+</html>

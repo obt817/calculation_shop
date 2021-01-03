@@ -1,0 +1,38 @@
+{% extends "cal_app1/base.html" %}
+{% block main %}
+<p>
+  ※時間変更前の給料を事前に控えておく
+</p>
+<p>
+  時間計算が終わったらクリック→<a href="salary_cal2/">金額計算</a>
+</p>
+<div class="forms">
+ <form method="post">
+    {% csrf_token %}
+    <div class="font1">
+      <h2>入力画面</h2>
+
+    </div>
+
+
+    {{ form.as_p }}
+
+    <input type="submit" value="計算" class=btn />
+ </form>
+
+ </div>
+<div class="answer">
+
+  <div class="font2">
+  <h2>結果表示</h2>
+  </div>
+
+  <div class="font3">
+  <h3>ここに計算結果が表示されます</h3>
+  </div>
+
+  <p>{{ new_time_1 }}</p>
+  <p>{{ lower_day }}</p>
+  <p>{{ lower_time }}</p>
+</div>
+{% endblock %}
