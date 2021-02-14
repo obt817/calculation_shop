@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import salary_topView
-from .views import salary_calView, salary2_calView
+from .views import salary_calView, salary2_calView, shift_form
 from django.contrib.auth.decorators import login_required
 
 
@@ -11,6 +11,8 @@ urlpatterns = [
          name="sal_cal"),
     path('salary_cal/2/', login_required(salary2_calView.as_view()),
          name="sal_cal_2"),
+    path('form', login_required(shift_form.as_view()),
+         name="form"),
 
 
     ]

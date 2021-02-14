@@ -2,6 +2,7 @@ from django .views.generic import TemplateView
 from django.views.generic.edit import FormView
 from . import forms
 import math
+from django.contrib import messages
 
 
 class indexView(TemplateView):
@@ -71,3 +72,15 @@ class salary2_calView(FormView):
          form=form
         )
         return self.render_to_response(ctxt)
+
+
+class shift_form(FormView):
+    form_class = forms.shiftForm
+    template_name = "cal_app1/form.html"
+    success_url = "form"
+
+    def form_valid(self, form):
+        form.save()
+        messages.add_message(self.request, messages.SUCCESS, "登録完了！")
+
+        return super().form_valid(form)
